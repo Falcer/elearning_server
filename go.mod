@@ -1,8 +1,9 @@
-module github.com/Falcer/elearning/server
+module github.com/Falcer/elearning_server
 
 go 1.15
 
 require (
+	github.com/Falcer/elearning/server v0.0.0-20210320043056-4314fb240330
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gofiber/fiber/v2 v2.5.0
 	github.com/joho/godotenv v1.3.0
