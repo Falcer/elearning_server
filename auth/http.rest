@@ -1,0 +1,57 @@
+### Register
+POST http://127.0.0.1:8080/register
+Content-Type: application/json
+
+{
+    "email": "john@mail.com",
+    "fullname": "John Doe",
+    "password": "johndoe123",
+    "image_profile": "https://avatars.githubusercontent.com/u/62598992?s=460&u=ece7366e3cf7bc0e4d627bbaf520fd01685c0b16&v=4"
+}
+
+### Login
+POST http://127.0.0.1:8080/login
+Content-Type: application/json
+
+{
+    "email": "john@mail.com",
+    "password": "johndoe123"
+}
+
+### Users
+GET http://127.0.0.1:8080/user
+
+### User Role add
+POST http://127.0.0.1:8080/user/role
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "role_id": "1"
+}
+
+### User Role delete
+Delete http://127.0.0.1:8080/user/role
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "role_id": "1"
+}
+
+### Roles
+GET http://127.0.0.1:8080/role
+
+### Role by id
+GET http://127.0.0.1:8080/role/605555e3a5e7bdad2ad66b2d
+
+### Role add
+POST http://127.0.0.1:8080/role
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "description": "Admin role"
+}
+### Role delete
+DELETE  http://127.0.0.1:8080/role/1

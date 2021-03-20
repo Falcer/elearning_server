@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  app_db:
+    build:
+      context: .
+      dockerfile: ./db.Dockerfile
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: elearning
+      MONGO_INITDB_ROOT_USERNAME: elearninguser
+      MONGO_INITDB_ROOT_PASSWORD: user678912jiosnjkasd89
