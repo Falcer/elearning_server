@@ -23,6 +23,12 @@ func NewRouter(app *fiber.App) *fiber.App {
 	r = NewRepo(databaseURL)
 	// Set UserService
 	s = NewService(r)
+	// Health Check
+	app.Get("/health", func(c *fiber.Ctx) error {
+		return c.Status(200).JSON(&fiber.Map{
+			"health": "UP",
+		})
+	})
 	app.Post("/login", func(c *fiber.Ctx) error {
 		var body = new(Login)
 		if err := c.BodyParser(body); err != nil {
