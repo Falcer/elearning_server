@@ -1,6 +1,4 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/Falcer/elearning/server v0.0.0-20210320043056-4314fb240330 h1:MKYWmatltzhTtEez8js7zFxk+f3ktmoP8mDrUqmk43c=
-github.com/Falcer/elearning/server v0.0.0-20210320043056-4314fb240330/go.mod h1:EI9sc3Sx4BPRnfWGKzms2kCyTnM/yWCtXmq1G0+KBes=
 github.com/andybalholm/brotli v1.0.0 h1:7UCwP93aiSfvWpapti8g88vVVGp2qqtGyePsSuDafo4=
 github.com/andybalholm/brotli v1.0.0/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=
 github.com/aws/aws-sdk-go v1.34.28 h1:sscPpn/Ns3i0F4HPEWAVcwdIRaZZCuL7llJ2/60yPIk=

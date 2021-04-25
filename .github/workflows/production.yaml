@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     steps:
       - uses: actions/checkout@v2
 
@@ -17,8 +20,11 @@ jobs:
         with:
           go-version: 1.15
 
+      - name: Downloading Module
+        run: go mod tidy
+
       - name: Test
-        run: go test -v ./app/...
+        run: go test -v ./...
 
       - name: Build
-        run: go build -v ./app/...
+        run: go build -v ./...

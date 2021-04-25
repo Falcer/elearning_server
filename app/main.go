@@ -6,7 +6,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/Falcer/elearning/server/auth"
+	"server/auth"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 )
