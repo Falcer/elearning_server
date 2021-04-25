@@ -1,11 +1,21 @@
 version: "3.7"
 services:
+  app_server:
+    build:
+      context: ./app
+      dockerfile: ./app.Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app_db
   app_db:
     build:
-      context: .
+      context: ./database
       dockerfile: ./db.Dockerfile
     ports:
-      - 27017:27017
+      - "27017:27017"
+    volumes:
+      - ./database/data:/data/db
     environment:
       MONGO_INITDB_DATABASE: elearning
       MONGO_INITDB_ROOT_USERNAME: elearninguser
