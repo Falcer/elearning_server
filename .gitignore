@@ -1,4 +1,5 @@
 **/.env
 **/build
 **/vendor
+/config/certbot/conf/*
 /database/data
