@@ -30,8 +30,12 @@ func init() {
 func main() {
 	app := fiber.New()
 	app.Get("/", func(c *fiber.Ctx) error {
+		host, err := os.Hostname()
+		if err != nil {
+			log.Println(err)
+		}
 		return c.Status(200).JSON(&fiber.Map{
-			"message": "app running 🔥",
+			"message": fmt.Sprintf("App running 🔥 at %s", host),
 		})
 	})
 	_ = auth.NewRouter(app)
