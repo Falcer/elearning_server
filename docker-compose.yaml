@@ -1,11 +1,29 @@
 version: "3.7"
 services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
+      - ./config/certbot/conf:/etc/letsencrypt
+      - ./config/certbot/www:/var/www/certbot
+    depends_on:
+      - app_server
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./config/certbot/conf:/etc/letsencrypt
+      - ./config/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
   app_server:
     build:
       context: ./app
       dockerfile: ./app.Dockerfile
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080" # using nginx to expose the app, so we don't need to expose it seperately
     depends_on:
       - app_db
   app_db:
